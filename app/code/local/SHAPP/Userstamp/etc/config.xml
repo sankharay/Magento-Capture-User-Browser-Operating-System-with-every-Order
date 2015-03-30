@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Sandeep
+ * @package    Simplehuman
+ * @author     ssingh@simplehuman.com
+ * @website    http://www.simplehuman.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+  <modules>
+      <SHAPP_Userstamp>
+          <version>0.0.2</version>
+      </SHAPP_Userstamp>
+  </modules>
+  <global>
+    <models>
+        <shapp_userstamp>
+             <class>SHAPP_Userstamp_Model</class>
+        </shapp_userstamp>
+    </models>
+    <events>
+      <sales_order_place_before>
+        <observers>
+            <shapp_userstamp>
+            <class>shapp_userstamp/observer</class>
+            <method>updateUserstamp</method>
+            </shapp_userstamp>
+        </observers>
+      </sales_order_place_before>
+    </events>
+  </global>
+</config>
